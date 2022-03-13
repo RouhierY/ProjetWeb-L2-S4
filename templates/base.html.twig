@@ -22,11 +22,15 @@
         <nav >
             <ul id="navbar">
                 <li class="navbar" id="principal"><i class="fas fa-home"><a href="{{ path('app_homepage') }}">Accueil</a></i>
+                    {% if is_granted("ROLE_ADMIN") %}
+                    <li class="navbar"><a href="{{ path('app_admin') }}">Accéder au dashboard</a></li>
+                {% endif %}
                 {% if is_granted("ROLE_USER") %}
                     <li class="navbar">Bienvenue {{ app.user.nom }}</li>
+                <li class="navbar"><a href="{{ path(('app_logout')) }}">Se déconnecter</a></li>
                 <li class="navbar" id="panier"><i class="fas fa-shopping-cart"></i> Voir le panier </li>
                {% else %}
-                <li class="navbar" ><a href="{{ path('app_register') }}" > S'enregistrer</a>
+                <li class="navbar" ><a href="{{ path('app_register') }}" > S'enregistrer </a>
                 <li class="navbar" id="btnConnexion"><a href="{{ path('app_login') }}" id="clickConnecter"> Se Connecter</a>
                 {% endif %}
             </ul>
