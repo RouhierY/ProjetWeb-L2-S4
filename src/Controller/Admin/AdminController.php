@@ -89,7 +89,7 @@ class AdminController extends AbstractDashboardController
         return[
         MenuItem::section('Dashboard'),
             MenuItem::linkToRoute('Accueil', 'fa fa-home', 'app_homepage'),
-            MenuItem::linkToRoute('Images', 'fas fa-list', 'app_admin_crud_film'),
+            MenuItem::linkToRoute('Films', 'fas fa-list', 'app_admin_crud_film'),
             MenuItem::linkToRoute('Users', 'fas fa-list', 'app_admin_crud_user'),
             MenuItem::linkToLogout('Logout', 'fa fa-exit'),
 

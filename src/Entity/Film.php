@@ -47,7 +47,7 @@ class Film
      * @param $realisation
      * @param $img
      */
-    public function __construct($nom, $date, $synopsis, $duree, $budget, $genre, $realisation, $img)
+    /*public function __construct($nom, $date, $synopsis, $duree, $budget, $genre, $realisation, $img)
     {
         $this->nom = $nom;
         $this->date = $date;
@@ -57,7 +57,7 @@ class Film
         $this->genre = $genre;
         $this->realisation = $realisation;
         $this->img = $img;
-    }
+    }*/
 
 
     public function getId(): ?int

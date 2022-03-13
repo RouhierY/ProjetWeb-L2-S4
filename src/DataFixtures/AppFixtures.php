@@ -79,7 +79,7 @@ Paul n'a plus qu'à patienter que son heure vienne, tout en se demandant combien
         $admin->setRoles(array("ROLE_ADMIN"));
         $pass="DttbcEb3NwrCvLk";
         $passHashed=password_hash($pass,PASSWORD_BCRYPT);
-        $admin->setPassword("$passHashed");
+        $admin->setPassword($passHashed);
         $admin->setNom("Yannis");
         $manager->persist($admin);
 
