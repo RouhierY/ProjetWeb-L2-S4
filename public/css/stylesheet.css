@@ -1,0 +1,184 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+#clickEnregistrer:hover{
+    cursor:pointer;
+}
+#clickEnregistrer{
+    text-decoration: underline;
+}
+body{
+}
+.page{
+    font-family:sans-serif;
+    max-width: max-content;
+    margin:0 ;
+    line-height:1.5;
+    position: relative;
+}
+#panier{
+    background: yellow;
+}
+
+#principal{
+background: yellow;
+}
+.navbar{
+
+
+
+
+}
+div{
+    display: flex;
+    flex-direction: column;
+
+}
+#navbar{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+
+    text-align: center;
+    background: #777777;
+
+    border: 1px solid black;
+}
+form{
+    border-bottom: black;
+    display: flex;
+    flex-direction: column;
+
+}
+#btnReservation{
+    width: 20em;
+}
+
+.cPanier{
+
+    width:20em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+main{
+    text-align: center;
+    align-items: center;
+    padding:62px 12px 12px 12px;
+}
+#random{
+
+    text-align: center;
+    justify-content:space-around;
+}
+#enregistrer{
+    display: none;
+}
+#formulaire{
+    display: flex;
+}
+
+
+
+body {
+    font-family: Roboto, Helvetica, sans-serif;
+}
+/* Fixez le bouton sur le côté gauche de la page the button on the left side of the page */
+.open-btn {
+    display: flex;
+    justify-content: left;
+}
+/* Stylez et fixez le bouton sur la page */
+.open-button {
+    background-color: #1c87c9;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+}
+/* Positionnez la forme Popup */
+.login-popup {
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+/* Masquez la forme Popup */
+.form-popup {
+    position: fixed;
+    left: 45%;
+    top:5%;
+    transform: translate(-45%,5%);
+    border: 2px solid #666;
+    z-index: 9;
+    background: white;
+}
+/* Styles pour le conteneur de la forme */
+.form-container {
+    max-width: 300px;
+    padding: 20px;
+    background-color: #fff;
+}
+/* Largeur complète pour les champs de saisie */
+.form-container input[type=text], .form-container input[type=password] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #eee;
+}
+/* Quand les entrées sont concentrées, faites quelque chose */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+/* Stylez le bouton de connexion */
+.form-container .btn {
+    background-color: #8ebf42;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom:10px;
+    opacity: 0.8;
+}
+
+li{
+    text-decoration: none;
+}
+/* Stylez le bouton pour annuler */
+.form-container .cancel {
+    background-color: #cc0000;
+}
+/* Planez les effets pour les boutons */
+.form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+}
+#formEnregistrer{
+    display: none;
+}
+#connecter{
+    display: none;
+}
+#clickConnecter:hover{
+    cursor:pointer;
+}
+#clickConnecter{
+    text-decoration: underline;
+}
+#fenetrePanier{
+    display: none;
+}
+#btnPanier:hover{
+    cursor: pointer;
+}
+#btnPanier{
+    text-decoration: underline;
+}
