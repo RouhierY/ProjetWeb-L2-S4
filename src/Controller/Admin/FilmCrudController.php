@@ -25,11 +25,11 @@ class FilmCrudController extends AbstractCrudController
             TextField::new('nom'),
             DateField::new('date'),
             TextField::new('synopsis'),
-            TextField::new('duree'),
+            TextField::new('duree','Durée'),
             TextField::new('budget'),
             TextField::new('genre'),
             TextField::new('realisation'),
-            ImageField::new("img","Image")->setUploadDir("public/images"),
+            ImageField::new("img","Image")->setUploadDir("public/images")->setBasePath("images"),
         ];
     }
 

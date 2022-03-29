@@ -45,6 +45,18 @@ class FilmRepository extends ServiceEntityRepository
         }
     }
 
+    /**
+     * @throws ORMException
+     * @throws OptimisticLockException
+     */
+    public function random3(){
+        return $this->createQueryBuilder('a')
+
+            ->setMaxResults(3)
+            ->getQuery()
+            ->execute();
+    }
+
     // /**
     //  * @return Film[] Returns an array of Film objects
     //  */

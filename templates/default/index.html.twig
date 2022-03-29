@@ -3,5 +3,17 @@
 {% block title %}Accueil{% endblock %}
 
 {% block body %}
+    <ul style="list-style-type: none;display: flex;justify-content: space-around">
+{#  {{ dump(random3) }}#}
+    {% for r3 in random3 %}
+        <div class="card" style="width: 18rem;">
+        <li ><img class="img-fluid img-thumbnail" src="{{ asset("images/"~r3.img) }}" alt="Poster du film {{ r3.nom }}"></li>
+        <div class="card-title">
+            <a href="#" class="btn btn-primary" style="text-decoration: none">{{ r3.nom }}</a>
+
+        </div>
+        </div>
+        {% endfor %}
+    </ul>
 
 {% endblock %}

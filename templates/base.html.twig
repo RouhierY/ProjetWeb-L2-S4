@@ -6,33 +6,69 @@
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
         {% block stylesheets %}
-            <link rel="stylesheet" href="{{ asset('css/stylesheet.css') }}">
+            <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+
 
             {{ encore_entry_link_tags('app') }}
 
         {% endblock %}
 
         {% block javascripts %}
+            <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+            <script src="{{ asset('js/bootstrap.js') }}"></script>
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
     <body>
     <!-- menu nav bar-->
+    <div ><nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">ProjetWeb</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item" ><i class="fas fa-home"><a class="nav-link " href="{{ path('app_homepage') }}">Accueil</a></i>
+                        {% if is_granted("ROLE_USER") %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Bienvenue {{ app.user.nom }}
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li class="dropdown-item" ><i class="far fa-address-card"></i><a href="#" class="nav-link">Voir mon profile</a></li>
+                                <li class="dropdown-item" ><i class="fas fa-shopping-cart"></i><a href="#" class="nav-link">Voir le panier</a></li>
+                                {% if is_granted("ROLE_ADMIN") %}
+                                    <li class="dropdown-item"><a class="nav-link" href="{{ path('app_admin') }}">Accéder au dashboard</a></li>
+                                {% endif %}
+                                <li><hr class="dropdown-divider"></li>
+                                <li class="dropdown-item"><a class="nav-link" href="{{ path(('app_logout')) }}">Se déconnecter</a></li>
+                            </ul>
+                        </li>
+                        {% else %}
+
+                            <li class="nav-item dropdown">
+                                <button class="btn  btn-sm" type="button">
+                                    <a class="nav-link" href="{{ path('app_login') }}" > Connexion </a>
+                                </button>
+                                <button type="button" class="btn btn-sm  dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="visually-hidden">Toggle Dropdown</span>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li class="dropdown-item" ><a class="nav-link" href="{{ path('app_register') }}" > S'enregistrer </a></li>
+                                </ul>
+                            </li>
+
+                            {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav></div>
     <div>
         <nav >
             <ul id="navbar">
-                <li class="navbar" id="principal"><i class="fas fa-home"><a href="{{ path('app_homepage') }}">Accueil</a></i>
-                    {% if is_granted("ROLE_ADMIN") %}
-                    <li class="navbar"><a href="{{ path('app_admin') }}">Accéder au dashboard</a></li>
-                {% endif %}
-                {% if is_granted("ROLE_USER") %}
-                    <li class="navbar">Bienvenue {{ app.user.nom }}</li>
-                <li class="navbar"><a href="{{ path(('app_logout')) }}">Se déconnecter</a></li>
-                <li class="navbar" id="panier"><i class="fas fa-shopping-cart"></i> Voir le panier </li>
-               {% else %}
-                <li class="navbar" ><a href="{{ path('app_register') }}" > S'enregistrer </a>
-                <li class="navbar" id="btnConnexion"><a href="{{ path('app_login') }}" id="clickConnecter"> Se Connecter</a>
-                {% endif %}
+
             </ul>
         </nav>
 
